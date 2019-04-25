@@ -74,13 +74,13 @@ services:
       #placement:
         #constraints: [node.role == manager]
 
-  phpmyadmin:
-      container_name: phpmyadmin
-      image: phpmyadmin/phpmyadmin
-      links:
-        - hybris-db:3306
-      ports:
-          - 8080:80
+  #phpmyadmin:
+  #    container_name: phpmyadmin
+  #    image: phpmyadmin/phpmyadmin
+  #    links:
+  #      - hybris-db:3306
+  #    ports:
+  #        - 8080:80
 networks:
   frontend:
   backend:
