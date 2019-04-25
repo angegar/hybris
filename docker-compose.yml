@@ -2,7 +2,7 @@ version: "3.7"
 services:
   hybris:
     container_name: hybris
-    image: dtrhackathon.cloudspc.it/laurentg/hybris:latest
+    image: angegar/hybris:latest
     environment:
       - HYBRIS_DB_URL=jdbc:mysql://hybris-db:3306/hybriscommerce?useConfigs=maxPerformance&characterEncoding=utf8
       - HYBRIS_DB_DRIVER=com.mysql.jdbc.Driver
