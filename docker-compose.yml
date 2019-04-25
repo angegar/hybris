@@ -47,8 +47,8 @@ services:
             cpus: '4'
             memory: 20gb
           limits:
-              cpus: '5'
-              memory: 32gb
+            cpus: '5'
+            memory: 32gb
       placement:
         constraints: [node.labels.engine==worker]
 
