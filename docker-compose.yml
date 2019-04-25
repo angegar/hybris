@@ -14,10 +14,10 @@ services:
       - HYBRIS_DB_PASSWORD=hybris
       - HYBRIS_INITIALIZE_SYSTEM=yes
     ports:
-      - "9001:9001"
-      - "9002:9002"
-      - "8983"
-      - "8000"
+      - 9001
+      - 9002
+      - 8983
+      - 8000
     logging:
       driver: syslog
       options:
@@ -43,6 +43,9 @@ services:
       restart_policy:
         condition: on-failure
       resources:
+          reservations:
+            cpus: 4
+            memory: 20gb
           limits:
               cpus: '5'
               memory: 32gb
