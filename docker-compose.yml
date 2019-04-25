@@ -50,8 +50,9 @@ services:
       - db-data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=hybris
-    placement:
-        constraints: [node.labels.engine==worker]
+    deploy:
+      placement:
+          constraints: [node.labels.engine==worker]
 
     #networks:
     #  - backend
