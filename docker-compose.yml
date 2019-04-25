@@ -47,7 +47,7 @@ services:
     container_name: hybris-db
     image: stefanlehmann/hybris-mysql:latest
     volumes:
-      - hybris-db-data:/var/lib/mysql
+      - db:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=hybris
     deploy:
@@ -73,5 +73,5 @@ networks:
   backend:
 
 volumes:
-  hybris-db-data:
+  db:
     external: true
