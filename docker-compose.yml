@@ -25,9 +25,9 @@ services:
         syslog-format: "rfc5424micro"
         tag: "hybris/hybris"
 
-    #networks: 
-    #  - frontend
-    #  - backend
+    networks: 
+      - frontend
+      - backend
     depends_on:
       - hybris-db
     deploy:
@@ -67,8 +67,8 @@ services:
       placement:
           constraints: [node.labels.engine==worker]
 
-    #networks:
-    #  - backend
+    networks:
+      - backend
     #deploy:
       #replicas: 1
       #placement:
