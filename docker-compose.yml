@@ -18,6 +18,13 @@ services:
       - "9002:9002"
       - "8983"
       - "8000"
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://172.17.0.1:6515"
+        syslog-format: "rfc5424micro"
+        tag: "hybris/hybris"
+
     #networks: 
     #  - frontend
     #  - backend
@@ -38,7 +45,7 @@ services:
       resources:
           limits:
               cpus: '5'
-              memory: 10gb
+              memory: 32gb
       placement:
         constraints: [node.labels.engine==worker]
 
@@ -46,6 +53,12 @@ services:
   hybris-db:
     container_name: hybris-db
     image: stefanlehmann/hybris-mysql:latest
+    logging:
+      driver: syslog
+      options:
+        syslog-address: "udp://172.17.0.1:6515"
+        syslog-format: "rfc5424micro"
+        tag: "hybris/hybris-db"
     volumes:
       - db:/var/lib/mysql
     environment:
