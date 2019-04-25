@@ -36,7 +36,7 @@ services:
         - ecaas.external.host=hybris
         - com.docker.ucp.access.label=/Shared/ecaas
       mode: replicated
-      replicas: 1
+      replicas: 2
       #update_config:
       #  parallelism: 2
       #  delay: 10s
