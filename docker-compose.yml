@@ -1,7 +1,7 @@
 version: "3.7"
 services:
 ##  https://hybris.ecaassite.cloudspc.it
-## https://vote-result2.ecaashackathon.cloudspc.it/
+## https://vote-result2.ecaashackathon.cloudspc.it
   hybris:
     container_name: hybris
     image: angegar/hybris:latest
