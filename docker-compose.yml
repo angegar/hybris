@@ -1,5 +1,7 @@
 version: "3.7"
 services:
+##  https://hybris.ecaassite.cloudspc.it
+## https://vote-result2.ecaashackathon.cloudspc.it/
   hybris:
     container_name: hybris
     image: angegar/hybris:latest
@@ -23,8 +25,9 @@ services:
       - hybris-db
     deploy:
       labels:
-        - "ecaas.external.port=9002"
-        - "ecaas.external.host=hybris-demo"
+        - ecaas.external.port=9002
+        - ecaas.external.host=hybris
+        - com.docker.ucp.access.label=/Shared/ecaas
       mode: replicated
       replicas: 1
       #update_config:
@@ -36,6 +39,9 @@ services:
           limits:
               cpus: '5'
               memory: 10gb
+      placement:
+        constraints: [node.labels.engine==worker]
+
   
   hybris-db:
     container_name: hybris-db
@@ -44,6 +50,9 @@ services:
       - db-data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=hybris
+    placement:
+        constraints: [node.labels.engine==worker]
+
     #networks:
     #  - backend
     #deploy:
