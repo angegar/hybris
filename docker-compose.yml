@@ -1,6 +1,6 @@
 version: "3.7"
 services:
-##  https://hybris.ecaassite.cloudspc.it
+## https://hybris.ecaassite.cloudspc.it
 ## https://vote-result2.ecaashackathon.cloudspc.it
   hybris:
     container_name: hybris
@@ -68,21 +68,9 @@ services:
     deploy:
       placement:
           constraints: [node.labels.engine==worker]
-
     networks:
       - backend
-    #deploy:
-      #replicas: 1
-      #placement:
-        #constraints: [node.role == manager]
 
-  #phpmyadmin:
-  #    container_name: phpmyadmin
-  #    image: phpmyadmin/phpmyadmin
-  #    links:
-  #      - hybris-db:3306
-  #    ports:
-  #        - 8080:80
 networks:
   frontend:
   backend:
