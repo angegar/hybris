@@ -74,3 +74,4 @@ networks:
 
 volumes:
   db-data:
+    external: true
