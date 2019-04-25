@@ -44,7 +44,7 @@ services:
         condition: on-failure
       resources:
           reservations:
-            cpus: 4
+            cpus: '4'
             memory: 20gb
           limits:
               cpus: '5'
