@@ -60,7 +60,7 @@ services:
         syslog-format: "rfc5424micro"
         tag: "hybris/hybris-db"
     volumes:
-      - db:/var/lib/mysql
+      - db-data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=hybris
     deploy:
@@ -86,5 +86,5 @@ networks:
   backend:
 
 volumes:
-  db:
+  db-data:
     external: true
