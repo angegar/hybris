@@ -1,0 +1,57 @@
+version: "3.7"
+services:
+  hybris:
+    container_name: hybris
+    image: hybris:latest
+    environment:
+      - HYBRIS_DB_URL=jdbc:mysql://hybris-db:3306/hybriscommerce?useConfigs=maxPerformance&characterEncoding=utf8
+      - HYBRIS_DB_DRIVER=com.mysql.jdbc.Driver
+      - HYBRIS_DB_USER=hybris
+      - HYBRIS_DB_PASSWORD=hybris
+      - HYBRIS_INITIALIZE_SYSTEM=yes
+    ports:
+      - "9001:9001"
+      - "9002:9002"
+      - "8983"
+      - "8000"
+    #networks: 
+    #  - frontend
+    #  - backend
+    depends_on:
+      - hybris-db
+    deploy:
+      mode: replicated
+      replicas: 2
+      update_config:
+        parallelism: 2
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+  
+  hybris-db:
+    container_name: hybris-db
+    image: stefanlehmann/hybris-mysql:latest
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=hybris
+    #networks:
+    #  - backend
+    #deploy:
+      #replicas: 1
+      #placement:
+        #constraints: [node.role == manager]
+
+  phpmyadmin:
+      container_name: phpmyadmin
+      image: phpmyadmin/phpmyadmin
+      links:
+        - hybris-db:3306
+      ports:
+          - 8080:80
+networks:
+  frontend:
+  backend:
+
+volumes:
+  db-data:
