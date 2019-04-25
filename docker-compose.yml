@@ -2,7 +2,7 @@ version: "3.7"
 services:
   hybris:
     container_name: hybris
-    image: angegar/hybris:latest
+    image: dtrhackathon.cloudspc.it/laurentg/hybris:latest
     environment:
       - HYBRIS_DB_URL=jdbc:mysql://hybris-db:3306/hybriscommerce?useConfigs=maxPerformance&characterEncoding=utf8
       - HYBRIS_DB_DRIVER=com.mysql.jdbc.Driver
@@ -43,7 +43,7 @@ services:
     #  - backend
     #deploy:
       #replicas: 1
-      #placement: 
+      #placement:
         #constraints: [node.role == manager]
 
   phpmyadmin:
