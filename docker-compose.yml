@@ -43,12 +43,12 @@ services:
       restart_policy:
         condition: on-failure
       resources:
-          reservations:
-            cpus: '4'
-            memory: 20gb
-          limits:
-            cpus: '5'
-            memory: 32gb
+        reservations:
+          cpus: '4'
+          memory: 20gb
+        limits:
+          cpus: '5'
+          memory: 32gb
       placement:
         constraints: [node.labels.engine==worker]
 
