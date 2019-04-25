@@ -52,7 +52,6 @@ services:
       placement:
         constraints: [node.labels.engine==worker]
 
-  
   hybris-db:
     container_name: hybris-db
     image: stefanlehmann/hybris-mysql:latest
