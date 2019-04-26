@@ -14,10 +14,10 @@ services:
       - HYBRIS_DB_PASSWORD=hybris
       - HYBRIS_INITIALIZE_SYSTEM=yes
     ports:
-      - "9001:80"
-      - "9002:443"
-      - "8983"
-      - "8000"
+      - "80:9001"
+      - "443:9002"
+      - "8983:8943"
+      - "8000:8000"
     #logging:
     #  driver: syslog
     #  options:
