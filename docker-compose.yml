@@ -1,7 +1,7 @@
 version: "3.7"
 services:
 ## https://hybris.ecaassite.cloudspc.it
-## https://vote-result2.ecaashackathon.cloudspc.it
+## https://vote-result2.ecaashackathon.cloudspc.it 
   hybris:
     container_name: hybris
     image: angegar/hybris:latest
@@ -18,12 +18,12 @@ services:
       - "9002:443"
       - "8983"
       - "8000"
-    logging:
-      driver: syslog
-      options:
-        syslog-address: "udp://172.17.0.1:6515"
-        syslog-format: "rfc5424micro"
-        tag: "hybris/hybris"
+    #logging:
+    #  driver: syslog
+    #  options:
+    #    syslog-address: "udp://172.17.0.1:6515"
+    #    syslog-format: "rfc5424micro"
+    #    tag: "hybris/hybris"
 
     networks: 
       - frontend
