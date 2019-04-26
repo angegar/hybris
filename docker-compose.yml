@@ -15,7 +15,7 @@ services:
       - HYBRIS_INITIALIZE_SYSTEM=yes
     ports:
       - "80:9001"
-      - "9002:9002"
+      - "443:9002"
       - "8983:8983"
       - "8000:8000"
     #logging:
