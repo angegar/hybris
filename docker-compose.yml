@@ -32,7 +32,7 @@ services:
       - hybris-db
     deploy:
       labels:
-        - ecaas.external.port=80
+        - ecaas.external.port=443
         - ecaas.external.host=hybris
         - com.docker.ucp.access.label=/Shared/ecaas
       mode: replicated
