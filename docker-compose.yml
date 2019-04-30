@@ -1,10 +1,10 @@
 version: "3.7"
 services:
 ## https://hybris.ecaassite.cloudspc.it
-## https://vote-result2.ecaashackathon.cloudspc.it 
+## https://vote-result2.ecaashackathon.cloudspc.it
   hybris:
     container_name: hybris
-    image: angegar/hybris:latest
+    image: angegar/hybris:6.5.0.0
     labels:
       - "com.dxc.ecaas.friendlyname=hybris"
     environment:
@@ -12,7 +12,7 @@ services:
       - HYBRIS_DB_DRIVER=com.mysql.jdbc.Driver
       - HYBRIS_DB_USER=hybris
       - HYBRIS_DB_PASSWORD=hybris
-      - HYBRIS_INITIALIZE_SYSTEM=yes
+    #  - HYBRIS_INITIALIZE_SYSTEM=yes
     ports:
       - "80:9001"
       - "9002:9002"
@@ -23,7 +23,7 @@ services:
     #  options:
     #    syslog-address: "udp://172.17.0.1:6515"
     #    syslog-format: "rfc5424micro"
-    #    tag: "hybris/hybris"
+    #    tag: "hybris/hybris" 
 
     networks: 
       - frontend

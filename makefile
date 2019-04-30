@@ -1,5 +1,5 @@
 build:
-	docker build -t hybris:latest .
+	docker build  -f docker/Dockerfile -t angegar/hybris:6.5.0.0 ./docker --no-cache
 
 run: db_run
 	docker run -d --name hybris -p 9001:9001 -p 9002:9002 \
