@@ -1,4 +1,4 @@
-FROM angegar/hybris-base-image:0.0.1 as buildcontainer
+FROM angegar/hybris-base-image:0.0.1
 #FROM stefanlehmann/hybris-base-image:latest as buildcontainer2
 MAINTAINER laurent.gil@dxc.com
 
